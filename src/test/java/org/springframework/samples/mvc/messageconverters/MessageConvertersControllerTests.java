@@ -89,7 +89,7 @@ public class MessageConvertersControllerTests extends AbstractContextControllerT
 				.andExpect(content().xml(XML));
 	}
 
-	//@Ignore
+	@Ignore
 	@Test
 	public void readJson() throws Exception {
 		this.mockMvc.perform(

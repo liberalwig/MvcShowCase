@@ -48,7 +48,7 @@ public class RedirectController {
 	@GetMapping("/{account}")
 	public String show(@PathVariable String account, @RequestParam(required=false) LocalDate date) {
 		System.out.println(account);
-		return "redirect/redirectResults";
+		return "/Results";
 	}
 
 }

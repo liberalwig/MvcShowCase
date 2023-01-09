@@ -59,7 +59,7 @@ public class FormControllerTests {
 						" subscribeNewsletter=false, additionalInfo={java=true, mvc=true}"));
 	}
 
-	//@Test
+	@Test
 	public void submitSuccessAjax() throws Exception {
 		String timezone = getTimezone(1941, 12, 16);
 		this.mockMvc.perform(
@@ -88,7 +88,7 @@ public class FormControllerTests {
 						" subscribeNewsletter=false, additionalInfo={java=true, mvc=true}"));
 	}
 
-	//@Test
+	@Test
 	public void submitError() throws Exception {
 		this.mockMvc.perform(
 				post("/form")).andDo(print())

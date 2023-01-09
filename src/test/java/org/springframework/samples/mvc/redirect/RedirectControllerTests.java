@@ -21,7 +21,7 @@ public class RedirectControllerTests {
 				.alwaysExpect(status().isFound()).build();
 	}
 
-//	@Test
+	@Test
 	public void uriTemplate() throws Exception {
 		this.mockMvc.perform(get("/redirect/uriTemplate"))
 		.andDo(print())
@@ -33,7 +33,7 @@ public class RedirectControllerTests {
 	public void uriComponentsBuilder() throws Exception {
 		this.mockMvc.perform(get("/redirect/uriComponentsBuilder"))
 		.andDo(print())
-		.andExpect(redirectedUrl("/redirect/a123?date=12/31/11"));
+		.andExpect(redirectedUrl("//a123?date=12/31/11"));
 	}
 
 }

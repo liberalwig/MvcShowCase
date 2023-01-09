@@ -36,7 +36,7 @@ public class MaskFormatAnnotationFormatterFactory implements AnnotationFormatter
 		public MaskFormatter(String mask) {
 			try {
 				this.delegate = new javax.swing.text.MaskFormatter(mask);
-				this.delegate.setValueContainsLiteralCharacters(false);
+				this.delegate.setValueContainsLiteralCharacters(false); // 리터럴문자를 포함시킬 거면 true
 				this.delegate.setPlaceholderCharacter('*');
 			} catch (ParseException e) {
 				throw new IllegalStateException("Mask could not be parsed " + mask, e);

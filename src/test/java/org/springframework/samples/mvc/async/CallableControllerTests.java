@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.asyncDispatch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
@@ -40,6 +41,7 @@ public class CallableControllerTests extends AbstractContextControllerTests {
     @Test
     public void view() throws Exception {
         MvcResult mvcResult = this.mockMvc.perform(get("/async/callable/view"))
+                .andDo(print())
                 .andExpect(request().asyncStarted())
                 .andExpect(request().asyncResult("views/html"))
                 .andReturn();
